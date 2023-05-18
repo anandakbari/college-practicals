@@ -35,7 +35,7 @@ int dijkstra(int graph[9][9],int source){
     int distance[9],parent[9]={-1};
     bool path[9];
 
-    int vertex=ver;
+    int vertex=ver+1;
 
     initilizesinglesource(distance,path,source);
 

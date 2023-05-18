@@ -38,19 +38,25 @@ int bellman(int graph[ver+1][ver+1],int source){
     int vertex=ver;
 
     initilizesinglesource(distance,path,source);
-
-    for(int i=1;i<=ver-1;i++){
+    for(int k=1;k<ver;k++){
+    for(int i=1;i<=ver;i++){
         for(int j=0;j<ver;j++)
         relax1(i,j,distance,graph,path,parent);
     }
-
-    for(int i=0;i<ver;i++){
-        if()
     }
-
     for(int i=0;i<ver+1;i++){
         printf("\n%d\t%d\t%d",i,distance[i],parent[i]);
     }
+
+    for(int i=0;i<ver;i++){
+        for(int j=0;j<ver;j++){
+            if(distance[j]>distance[i]+graph[i][j]){
+                return 0;
+            }
+        }
+    }
+    return 1;
+    
 }
 void main(){
     int graph[ver+1][ver+1]={{ 0, 11, 0, 0, 0, 0, 0, 8, 0 },
@@ -64,5 +70,6 @@ void main(){
                 { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
 
 
-    bellman(graph,0);
+    int x=bellman(graph,0);
+    printf("%d",x);
     }
