@@ -14,16 +14,6 @@ void initilizesinglesource(int distance[ver+1],bool path[ver+1],int source){
 }
 
 
-   /* int mindist(int distance[9],bool path[9]){
-        int min=INT_MAX,u;
-        for(int i=0;i<9;i++){
-            if(path[i]==false&&distance[i]<=min){
-                min=distance[i];
-                u=i;
-            }
-        }
-        return u;
-    }*/
 void relax1(int u,int v,int distance[],int graph[ver+1][ver+1],bool path[],int parent[]){
     if(path[v]==false&&graph[u][v]!=0&&distance[u]+graph[u][v]<distance[v]){
         distance[v]=distance[u]+graph[u][v];
