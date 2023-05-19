@@ -13,7 +13,7 @@ void main()
         visited[i]=0;
     }
 
-    for(int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
         int max=-1;
         for(int i=0;i<n;i++){
             if(visited[i]==0&&pwratio[i]>max){
